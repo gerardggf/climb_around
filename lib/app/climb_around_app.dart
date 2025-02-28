@@ -19,7 +19,7 @@ class AppStartupWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final appStartupState = ref.watch(appStartupProvider);
     return appStartupState.when(
-      data: (_) => const MyApp(),
+      data: (_) => const ClimbAroundApp(),
       error: (e, __) => SplashView(
         error: e.toString(),
       ),
@@ -52,14 +52,14 @@ class AppStartupLoadingWidget extends StatelessWidget {
   }
 }
 
-class MyApp extends ConsumerStatefulWidget {
-  const MyApp({super.key});
+class ClimbAroundApp extends ConsumerStatefulWidget {
+  const ClimbAroundApp({super.key});
 
   @override
-  ConsumerState<MyApp> createState() => _TeamTrackAppState();
+  ConsumerState<ClimbAroundApp> createState() => _TeamTrackAppState();
 }
 
-class _TeamTrackAppState extends ConsumerState<MyApp> {
+class _TeamTrackAppState extends ConsumerState<ClimbAroundApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(

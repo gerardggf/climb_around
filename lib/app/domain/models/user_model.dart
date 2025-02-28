@@ -28,13 +28,15 @@ class UserModel {
         name: json["name"] ?? '',
         id: json["id"] ?? '',
         email: json["email"] ?? '',
-        creationDate: json["creationDate"] ?? DateTime(1900),
+        creationDate: json["creationDate"] != null
+            ? DateTime.parse(json["creationDate"])
+            : DateTime(1900),
       );
 
   Map<String, dynamic> toJson() => {
         "name": name,
         "id": id,
         "email": email,
-        "creationDate": creationDate,
+        "creationDate": creationDate.toIso8601String(),
       };
 }

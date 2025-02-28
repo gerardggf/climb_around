@@ -24,13 +24,12 @@ class SignInController extends StateNotifier<SignInState> {
         );
 
   Future<void> signIn(String email, String password) async {
-    state = const SignInState.initial();
+    state = const SignInState.loading();
 
     final result = await loginUseCase(
       email,
       password,
     );
-
     result.when(
       left: (failure) {
         state = SignInState.error(failure.message);

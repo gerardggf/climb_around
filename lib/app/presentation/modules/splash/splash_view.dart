@@ -11,7 +11,7 @@ class SplashView extends StatelessWidget {
 
   final String? error;
 
-  static const String routeName = 'splash';
+  static const String routeName = '/';
 
   @override
   Widget build(BuildContext context) {

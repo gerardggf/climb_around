@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:climb_around/app/my_app.dart';
+import 'package:climb_around/app/climb_around_app.dart';
 
 void main() {
   testWidgets('Test', (WidgetTester tester) async {
     await tester.pumpWidget(
-      const MyApp(),
+      const ClimbAroundApp(),
     );
 
     expect(find.text('0'), findsOneWidget);

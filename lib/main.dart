@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'app/core/generated/translations.g.dart';
 import 'app/core/providers.dart';
-import 'app/my_app.dart';
+import 'app/climb_around_app.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

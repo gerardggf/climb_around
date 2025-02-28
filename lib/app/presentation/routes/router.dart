@@ -1,3 +1,6 @@
+import 'package:climb_around/app/domain/models/climbing_spot_model.dart';
+import 'package:climb_around/app/domain/repositories/prefs_repository.dart';
+import 'package:climb_around/app/presentation/modules/spot_detail/spot_detail_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -13,7 +16,13 @@ import '../modules/home/home_view.dart';
 import '../modules/splash/splash_view.dart';
 
 final userLoaderFutureProvider = FutureProvider<UserModel?>((ref) async {
-  return await ref.read(sessionControllerProvider.notifier).loadRemoteUser();
+  final user = ref.read(prefsRepoProvider).userLogged;
+  if (user != null) {
+    Future.microtask(
+      () => ref.read(sessionControllerProvider.notifier).setUser(user),
+    );
+  }
+  return user;
 });
 
 final goRouterProvider = Provider<GoRouter>(
@@ -31,11 +40,27 @@ final goRouterProvider = Provider<GoRouter>(
           ),
         ),
       ),
-      initialLocation: '/splash',
+      initialLocation: '/',
+      redirect: (context, state) {
+        if (userLoaderState.isLoading) {
+          if (state.uri.toString() != '/') return '/';
+          return null;
+        }
+
+        if (userAuthState == null) {
+          if (state.uri.toString() != '/sign-in') return '/sign-in';
+          return null;
+        }
+
+        if (state.uri.toString() == '/sign-in' || state.uri.toString() == '/') {
+          return '/home';
+        }
+        return null;
+      },
       routes: [
         GoRoute(
           name: SplashView.routeName,
-          path: '/splash',
+          path: '/',
           builder: (context, state) => const SplashView(),
         ),
         GoRoute(
@@ -53,24 +78,14 @@ final goRouterProvider = Provider<GoRouter>(
           path: '/profile',
           builder: (context, state) => const ProfileView(),
         ),
+        GoRoute(
+          name: SpotDetailView.routeName,
+          path: '/spot-detail',
+          builder: (context, state) => SpotDetailView(
+            spot: state.extra as ClimbingSpotModel,
+          ),
+        ),
       ],
-      redirect: (context, state) {
-        if (userLoaderState.isLoading) {
-          if (state.uri.toString() != '/splash') return '/splash';
-          return null;
-        }
-
-        if (userAuthState == null) {
-          if (state.uri.toString() != '/sign-in') return '/sign-in';
-          return null;
-        }
-
-        if (state.uri.toString() == '/sign-in' ||
-            state.uri.toString() == '/splash') {
-          return '/home';
-        }
-        return null;
-      },
     );
   },
 );

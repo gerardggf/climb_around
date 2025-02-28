@@ -1,3 +1,4 @@
 enum PrefsEnum {
   isDarkMode,
+  userLogged,
 }

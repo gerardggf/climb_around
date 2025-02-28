@@ -20,14 +20,6 @@ class SessionController extends StateNotifier<UserModel?> {
     state = user;
   }
 
-  Future<UserModel?> loadRemoteUser() async {
-    await Future.delayed(const Duration(seconds: 2));
-    // Not implemented
-    const user = null;
-    state = user;
-    return user;
-  }
-
   Future<void> logOut() async {
     state = null;
     await logOutUseCase();

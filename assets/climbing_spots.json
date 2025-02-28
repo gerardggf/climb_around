@@ -1,0 +1,412 @@
+{
+    "climbing_spots": [
+        {
+            "id": 1,
+            "name": "Siurana",
+            "country": "Spain",
+            "region": "Catalonia",
+            "coordinates": {
+                "latitude": 41.2564,
+                "longitude": 0.9335
+            },
+            "rock_type": "Limestone",
+            "difficulty_range": "6a - 9b",
+            "highlight_routes": [
+                {
+                    "name": "La Rambla",
+                    "grade": "9a+",
+                    "length_meters": 40
+                },
+                {
+                    "name": "El Pati",
+                    "grade": "8c",
+                    "length_meters": 30
+                }
+            ],
+            "access_info": {
+                "parking_available": true,
+                "hike_time_minutes": 20,
+                "recommended_season": "Autumn, Spring"
+            },
+            "services_nearby": {
+                "camping": true,
+                "restaurants": true,
+                "gear_shop": false
+            }
+        },
+        {
+            "id": 2,
+            "name": "Fontainebleau",
+            "country": "France",
+            "region": "Île-de-France",
+            "coordinates": {
+                "latitude": 48.4047,
+                "longitude": 2.7013
+            },
+            "rock_type": "Sandstone",
+            "difficulty_range": "3A - 8C+",
+            "highlight_routes": [
+                {
+                    "name": "Big Boss",
+                    "grade": "7C+",
+                    "length_meters": 4
+                },
+                {
+                    "name": "Rainbow Rocket",
+                    "grade": "8A",
+                    "length_meters": 5
+                }
+            ],
+            "access_info": {
+                "parking_available": true,
+                "hike_time_minutes": 5,
+                "recommended_season": "Spring, Autumn"
+            },
+            "services_nearby": {
+                "camping": false,
+                "restaurants": true,
+                "gear_shop": true
+            }
+        },
+        {
+            "id": 3,
+            "name": "Yosemite",
+            "country": "United States",
+            "region": "California",
+            "coordinates": {
+                "latitude": 37.7456,
+                "longitude": -119.5936
+            },
+            "rock_type": "Granite",
+            "difficulty_range": "5.6 - 5.15",
+            "highlight_routes": [
+                {
+                    "name": "The Nose",
+                    "grade": "5.14a",
+                    "length_meters": 1000
+                },
+                {
+                    "name": "Midnight Lightning",
+                    "grade": "V8",
+                    "length_meters": 4
+                }
+            ],
+            "access_info": {
+                "parking_available": true,
+                "hike_time_minutes": 30,
+                "recommended_season": "Spring, Fall"
+            },
+            "services_nearby": {
+                "camping": true,
+                "restaurants": true,
+                "gear_shop": true
+            }
+        },
+        {
+            "id": 4,
+            "name": "Kalymnos",
+            "country": "Greece",
+            "region": "Dodecanese Islands",
+            "coordinates": {
+                "latitude": 36.9950,
+                "longitude": 26.9863
+            },
+            "rock_type": "Limestone",
+            "difficulty_range": "5c - 9a",
+            "highlight_routes": [
+                {
+                    "name": "Grande Grotta",
+                    "grade": "8a",
+                    "length_meters": 30
+                },
+                {
+                    "name": "DNA",
+                    "grade": "9a+",
+                    "length_meters": 40
+                }
+            ],
+            "access_info": {
+                "parking_available": false,
+                "hike_time_minutes": 15,
+                "recommended_season": "Spring, Fall"
+            },
+            "services_nearby": {
+                "camping": false,
+                "restaurants": true,
+                "gear_shop": true
+            }
+        },
+        {
+            "id": 5,
+            "name": "El Chorro",
+            "country": "Spain",
+            "region": "Andalusia",
+            "coordinates": {
+                "latitude": 36.9190,
+                "longitude": -4.7591
+            },
+            "rock_type": "Limestone",
+            "difficulty_range": "4 - 8c",
+            "highlight_routes": [
+                {
+                    "name": "Poema de Roca",
+                    "grade": "8a",
+                    "length_meters": 25
+                },
+                {
+                    "name": "Caminito del Rey",
+                    "grade": "6a",
+                    "length_meters": 100
+                }
+            ],
+            "access_info": {
+                "parking_available": true,
+                "hike_time_minutes": 10,
+                "recommended_season": "Winter, Spring"
+            },
+            "services_nearby": {
+                "camping": true,
+                "restaurants": true,
+                "gear_shop": false
+            }
+        },
+        {
+            "id": 6,
+            "name": "Arco",
+            "country": "Italy",
+            "region": "Trentino-Alto Adige",
+            "coordinates": {
+                "latitude": 45.9216,
+                "longitude": 10.8837
+            },
+            "rock_type": "Limestone",
+            "difficulty_range": "5a - 9a",
+            "highlight_routes": [
+                {
+                    "name": "Hotel Olivo",
+                    "grade": "7b",
+                    "length_meters": 30
+                },
+                {
+                    "name": "Massone",
+                    "grade": "8b+",
+                    "length_meters": 35
+                }
+            ],
+            "access_info": {
+                "parking_available": true,
+                "hike_time_minutes": 5,
+                "recommended_season": "Spring, Autumn"
+            },
+            "services_nearby": {
+                "camping": false,
+                "restaurants": true,
+                "gear_shop": true
+            }
+        },
+        {
+            "id": 7,
+            "name": "Red River Gorge",
+            "country": "United States",
+            "region": "Kentucky",
+            "coordinates": {
+                "latitude": 37.8014,
+                "longitude": -83.6774
+            },
+            "rock_type": "Sandstone",
+            "difficulty_range": "5.7 - 5.14d",
+            "highlight_routes": [
+                {
+                    "name": "Golden Ticket",
+                    "grade": "5.14d",
+                    "length_meters": 25
+                },
+                {
+                    "name": "Jesus Wept",
+                    "grade": "5.12d",
+                    "length_meters": 20
+                }
+            ],
+            "access_info": {
+                "parking_available": true,
+                "hike_time_minutes": 15,
+                "recommended_season": "Autumn, Spring"
+            },
+            "services_nearby": {
+                "camping": true,
+                "restaurants": true,
+                "gear_shop": true
+            }
+        },
+        {
+            "id": 8,
+            "name": "Cerro Torre",
+            "country": "Argentina",
+            "region": "Patagonia",
+            "coordinates": {
+                "latitude": -49.2964,
+                "longitude": -73.0878
+            },
+            "rock_type": "Granite",
+            "difficulty_range": "5.10 - 5.13",
+            "highlight_routes": [
+                {
+                    "name": "Ragni Route",
+                    "grade": "5.12+",
+                    "length_meters": 900
+                },
+                {
+                    "name": "Compressor Route",
+                    "grade": "5.10 A2",
+                    "length_meters": 1000
+                }
+            ],
+            "access_info": {
+                "parking_available": false,
+                "hike_time_minutes": 180,
+                "recommended_season": "Summer"
+            },
+            "services_nearby": {
+                "camping": true,
+                "restaurants": false,
+                "gear_shop": false
+            }
+        },
+        {
+            "id": 9,
+            "name": "Railay Beach",
+            "country": "Thailand",
+            "region": "Krabi",
+            "coordinates": {
+                "latitude": 8.0116,
+                "longitude": 98.8395
+            },
+            "rock_type": "Limestone",
+            "difficulty_range": "5a - 8b+",
+            "highlight_routes": [
+                {
+                    "name": "Humanality",
+                    "grade": "6b+",
+                    "length_meters": 30
+                },
+                {
+                    "name": "Lord of the Thais",
+                    "grade": "7b",
+                    "length_meters": 35
+                }
+            ],
+            "access_info": {
+                "parking_available": false,
+                "hike_time_minutes": 10,
+                "recommended_season": "November - March"
+            },
+            "services_nearby": {
+                "camping": false,
+                "restaurants": true,
+                "gear_shop": true
+            }
+        },
+        {
+            "id": 10,
+            "name": "Wadi Rum",
+            "country": "Jordan",
+            "region": "Wadi Rum Desert",
+            "coordinates": {
+                "latitude": 29.5765,
+                "longitude": 35.4191
+            },
+            "rock_type": "Sandstone",
+            "difficulty_range": "5.6 - 5.13",
+            "highlight_routes": [
+                {
+                    "name": "Pillar of Wisdom",
+                    "grade": "5.10b",
+                    "length_meters": 450
+                },
+                {
+                    "name": "The Beauty",
+                    "grade": "5.10a",
+                    "length_meters": 250
+                }
+            ],
+            "access_info": {
+                "parking_available": true,
+                "hike_time_minutes": 60,
+                "recommended_season": "Autumn, Spring"
+            },
+            "services_nearby": {
+                "camping": true,
+                "restaurants": false,
+                "gear_shop": false
+            }
+        },
+        {
+            "id": 11,
+            "name": "Tonsai Beach",
+            "country": "Thailand",
+            "region": "Krabi",
+            "coordinates": {
+                "latitude": 8.0152,
+                "longitude": 98.8378
+            },
+            "rock_type": "Limestone",
+            "difficulty_range": "5b - 8a",
+            "highlight_routes": [
+                {
+                    "name": "Tidal Wave",
+                    "grade": "7a",
+                    "length_meters": 30
+                },
+                {
+                    "name": "Tonsai Playboy",
+                    "grade": "6c+",
+                    "length_meters": 25
+                }
+            ],
+            "access_info": {
+                "parking_available": false,
+                "hike_time_minutes": 15,
+                "recommended_season": "November - April"
+            },
+            "services_nearby": {
+                "camping": false,
+                "restaurants": true,
+                "gear_shop": true
+            }
+        },
+        {
+            "id": 12,
+            "name": "Rocklands",
+            "country": "South Africa",
+            "region": "Cederberg Mountains",
+            "coordinates": {
+                "latitude": -32.1971,
+                "longitude": 19.1551
+            },
+            "rock_type": "Sandstone",
+            "difficulty_range": "V0 - V15",
+            "highlight_routes": [
+                {
+                    "name": "The Vice",
+                    "grade": "V13",
+                    "length_meters": 5
+                },
+                {
+                    "name": "Nutsa",
+                    "grade": "V11",
+                    "length_meters": 4
+                }
+            ],
+            "access_info": {
+                "parking_available": true,
+                "hike_time_minutes": 10,
+                "recommended_season": "Winter (June - September)"
+            },
+            "services_nearby": {
+                "camping": true,
+                "restaurants": false,
+                "gear_shop": false
+            }
+        }
+    ]
+}
