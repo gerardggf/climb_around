@@ -54,7 +54,6 @@ class _HomeViewState extends ConsumerState<HomeView> {
                               crossAxisCount: 2,
                             ),
                             itemBuilder: (_, index) => ClimbingSpotCardWidget(
-                              key: Key('spot-$index'),
                               spot: spots[index],
                               index: index,
                               onTap: (index) {

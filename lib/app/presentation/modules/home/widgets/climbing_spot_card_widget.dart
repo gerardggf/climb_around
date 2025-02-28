@@ -17,6 +17,7 @@ class ClimbingSpotCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      key: Key('spot-$index'),
       onTap: () => onTap(index),
       child: DecoratedBox(
         decoration: BoxDecoration(
