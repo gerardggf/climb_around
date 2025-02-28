@@ -1,3 +1,4 @@
+import 'package:climb_around/app/core/utils/extensions/style_extensions.dart';
 import 'package:flutter/material.dart';
 
 class ListCardWidget extends StatelessWidget {
@@ -16,13 +17,17 @@ class ListCardWidget extends StatelessWidget {
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 7),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 15,
+            vertical: 7,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title,
-                  style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.bold)),
+              Text(
+                title,
+                style: context.themeHS,
+              ),
               ...values.map((value) => Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Text(

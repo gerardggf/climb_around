@@ -23,6 +23,8 @@ dependencies:
   slang: ^4.4.1
   slang_flutter: ^4.4.0
   flutter_map: ^8.1.0
+  latlong2: ^0.9.1
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:

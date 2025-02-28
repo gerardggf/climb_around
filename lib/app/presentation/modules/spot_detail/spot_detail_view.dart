@@ -1,6 +1,8 @@
 import 'package:climb_around/app/core/utils/extensions/theme_mode_extension.dart';
 import 'package:climb_around/app/presentation/modules/spot_detail/widgets/info_card_widget.dart';
 import 'package:climb_around/app/presentation/modules/spot_detail/widgets/list_card_widget.dart';
+import 'package:climb_around/app/presentation/modules/spot_detail/widgets/map_widget.dart';
+import 'package:climb_around/app/presentation/shared/utils/launch_this_url.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/colors.dart';
@@ -28,9 +30,9 @@ class SpotDetailView extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
             leading: IconButton(
-              icon: const Icon(
+              icon: Icon(
                 Icons.keyboard_arrow_left,
-                color: Colors.black,
+                color: context.isDarkMode ? Colors.white : Colors.black,
                 size: 40,
               ),
               onPressed: () => Navigator.pop(context),
@@ -81,25 +83,46 @@ class SpotDetailView extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
-                  InfoCardWidget(
+                  GestureDetector(
+                    onTap: () {
+                      final lat = spot.coordinates.latitude;
+                      final lon = spot.coordinates.longitude;
+                      final url =
+                          "https://www.google.com/maps/search/?api=1&query=$lat,$lon";
+
+                      launchThisUrl(url);
+                    },
+                    child: InfoCardWidget(
                       title: "🌍 Location",
-                      value: "${spot.region}, ${spot.country}"),
-                  InfoCardWidget(title: "🪨 Rock type", value: spot.rockType),
+                      value: "${spot.region}, ${spot.country}",
+                      child: AspectRatio(
+                        aspectRatio: 2,
+                        child: MapWidget(spot: spot),
+                      ),
+                    ),
+                  ),
                   InfoCardWidget(
-                      title: "⚡ Difficulty", value: spot.difficultyRange),
-                  ListCardWidget(
-                      title: '🔝 Featured routes',
-                      values: spot.highlightRoutes
-                          .map((e) =>
-                              '${e.name}-${e.grade} (${e.lengthMeters}m)')
-                          .toList()),
+                    title: "🪨 Rock type",
+                    value: spot.rockType,
+                  ),
+                  InfoCardWidget(
+                    title: "⚡ Difficulty",
+                    value: spot.difficultyRange,
+                  ),
                   InfoCardWidget(
                     title: "🚶‍♂️ Access",
                     value:
-                        "${spot.accessInfo.hikeTimeMinutes} min - ${spot.accessInfo.recommendedSeason}",
+                        "${spot.accessInfo.hikeTimeMinutes} min. - ${spot.accessInfo.recommendedSeason}",
                   ),
                   ListCardWidget(
-                    title: '🏕️ Nearby services',
+                    title: 'Featured routes',
+                    values: spot.highlightRoutes
+                        .map((e) =>
+                            '🔝 ${e.name} - ${e.grade} (${e.lengthMeters}m)')
+                        .toList(),
+                  ),
+                  ListCardWidget(
+                    title: 'Nearby services',
                     values: [
                       '${spot.servicesNearby.camping ? '✅' : '❌'} Camping',
                       '${spot.servicesNearby.restaurants ? '✅' : '❌'} Restaurants',

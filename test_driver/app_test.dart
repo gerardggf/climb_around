@@ -11,6 +11,8 @@ void main() {
       final pswdTf = find.byValueKey('pswd-tf');
       final signInBtn = find.byValueKey('sign-in-btn');
 
+      final fourthSpot = find.byValueKey('spot-3');
+
       late FlutterDriver driver;
 
       setUpAll(() async {
@@ -22,10 +24,11 @@ void main() {
         'Sign in',
         () async {
           await driver.tap(emailTf);
-          await driver.enterText('xxxx@gmail.com');
+          await driver.enterText('ggutiflo@gmail.com');
           await driver.tap(pswdTf);
           await driver.enterText('123456');
           await driver.tap(signInBtn);
+          await driver.tap(fourthSpot);
         },
       );
 
