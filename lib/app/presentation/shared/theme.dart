@@ -13,7 +13,7 @@ class AppTheme {
     drawerTheme: const DrawerThemeData(backgroundColor: AppColors.lightBg),
     scaffoldBackgroundColor: AppColors.lightBg,
     appBarTheme: const AppBarTheme(
-      iconTheme: IconThemeData(color: AppColors.light),
+      iconTheme: IconThemeData(color: Colors.black),
       backgroundColor: AppColors.lightBg,
       titleTextStyle: TextStyle(
         fontWeight: FontWeight.bold,
@@ -222,7 +222,7 @@ class AppTheme {
     drawerTheme: const DrawerThemeData(backgroundColor: AppColors.darkBg),
     scaffoldBackgroundColor: AppColors.darkBg,
     appBarTheme: const AppBarTheme(
-      iconTheme: IconThemeData(color: AppColors.dark),
+      iconTheme: IconThemeData(color: AppColors.darkSec),
       backgroundColor: AppColors.darkBg,
       titleTextStyle: TextStyle(
         fontWeight: FontWeight.bold,

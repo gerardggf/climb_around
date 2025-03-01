@@ -1,7 +1,7 @@
 import 'package:climb_around/app/core/utils/extensions/theme_mode_extension.dart';
+import 'package:climb_around/app/presentation/shared/widgets/app_icon_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/constants/assets.dart';
 import '../../../../core/constants/colors.dart';
 
 class MapMarkerItemWidget extends ConsumerWidget {
@@ -27,9 +27,8 @@ class MapMarkerItemWidget extends ConsumerWidget {
                 color: context.isDarkMode ? AppColors.dark : AppColors.light,
                 shape: BoxShape.circle,
               ),
-              child: Image.asset(
-                Assets.icon,
-                color: Colors.white,
+              child: const AppIconWidget(
+                radius: 10,
               ),
             ),
             CustomPaint(

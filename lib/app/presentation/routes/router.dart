@@ -71,13 +71,17 @@ final goRouterProvider = Provider<GoRouter>(
         GoRoute(
           name: SignInView.routeName,
           path: '/sign-in',
-          builder: (context, state) => const SignInView(),
+          builder: (context, state) => SignInView(),
         ),
         GoRoute(
           name: ProfileView.routeName,
           path: '/profile',
           builder: (context, state) => const ProfileView(),
         ),
+
+        //If we wanted to make it suitable for Navigation 2.0 we should use the spot id as
+        //pathParameter (/:id) and retrieve the element with that id from the climbing spots
+        //already fetched
         GoRoute(
           name: SpotDetailView.routeName,
           path: '/spot-detail',

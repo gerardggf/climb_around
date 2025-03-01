@@ -1,7 +1,6 @@
+import 'package:climb_around/app/presentation/shared/widgets/app_icon_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:climb_around/app/core/utils/extensions/num_to_sizedbox.dart';
-
-import '../../../core/constants/assets.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({
@@ -26,8 +25,8 @@ class SplashView extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Image.asset(
-                    Assets.icon,
+                  const AppIconWidget(
+                    radius: 80,
                   ),
                   30.h,
                   if (error != null)
