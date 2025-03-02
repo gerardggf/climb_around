@@ -7,6 +7,8 @@ import 'package:climb_around/app/climb_around_app.dart';
 //genhtml coverage/lcov.info -o coverage/html
 //open coverage/html/index.html
 
+// Use riverpod_test for provider testing and mocktail for mocking classes
+
 //TODO: WIP widget testing
 
 void main() {
@@ -15,4 +17,6 @@ void main() {
       const ClimbAroundApp(),
     );
   });
+
+  //.....
 }
