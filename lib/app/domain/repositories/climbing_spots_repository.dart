@@ -8,5 +8,6 @@ final climbingSpotsRepoProvider = Provider<ClimbingSpotsRepository>(
 );
 
 abstract class ClimbingSpotsRepository {
+  /// Fetches the climbing spots from the local JSON file
   AsyncResult<List<ClimbingSpotModel>> fetchClimbingSpots();
 }

@@ -1,7 +1,7 @@
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
-//To run tests: "flutter drive --target=test_driver/app.dart"
+//To run integration tests: "flutter drive --target=test_driver/app.dart"
 
 void main() {
   group(
@@ -21,7 +21,7 @@ void main() {
       });
 
       test(
-        'Sign in',
+        'Sign in and open a spot screen',
         () async {
           await driver.tap(emailTf);
           await driver.enterText('ggutiflo@gmail.com');

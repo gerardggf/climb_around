@@ -1,3 +1,4 @@
+/// Full data model of a climbing spot obtained from quicktype.io
 class ClimbingSpotModel {
   final int id;
   final String name;

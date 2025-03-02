@@ -46,6 +46,7 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<UserModel?> isAuthenticated() async {
+    //(unnecesary async function but just to see what normal operation would be like)
     final user = prefsRepository.userLogged;
     return user;
   }

@@ -1,5 +1,5 @@
 import 'package:climb_around/app/domain/models/climbing_spot_model.dart';
-import 'package:climb_around/app/domain/repositories/prefs_repository.dart';
+import 'package:climb_around/app/domain/repositories/auth_repository.dart';
 import 'package:climb_around/app/presentation/modules/spot_detail/spot_detail_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,8 +15,9 @@ import '../shared/widgets/error_info_widget.dart';
 import '../modules/home/home_view.dart';
 import '../modules/splash/splash_view.dart';
 
+/// Checks if the user is logged
 final userLoaderFutureProvider = FutureProvider<UserModel?>((ref) async {
-  final user = ref.read(prefsRepoProvider).userLogged;
+  final user = await ref.read(authRepoProvider).isAuthenticated();
   if (user != null) {
     Future.microtask(
       () => ref.read(sessionControllerProvider.notifier).setUser(user),
@@ -40,18 +41,21 @@ final goRouterProvider = Provider<GoRouter>(
           ),
         ),
       ),
-      initialLocation: '/',
+      initialLocation: '/', // Intial location is splash screen
       redirect: (context, state) {
+        // if the user is not checked yet, stay in the splash screen
         if (userLoaderState.isLoading) {
           if (state.uri.toString() != '/') return '/';
           return null;
         }
 
+        // if the user is not logged in, go to the sign in screen
         if (userAuthState == null) {
           if (state.uri.toString() != '/sign-in') return '/sign-in';
           return null;
         }
 
+        // if the user is logged in, go to the home screen
         if (state.uri.toString() == '/sign-in' || state.uri.toString() == '/') {
           return '/home';
         }

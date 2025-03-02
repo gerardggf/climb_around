@@ -6,6 +6,9 @@ import 'package:latlong2/latlong.dart';
 import '../../../../core/constants/assets.dart';
 import 'map_marker_item_widget.dart';
 
+///We can't use a useState hook in this widget because it doesn't work for MapController
+///and we can't init the controller in a useEffect hook because this hook can't manage
+///the destruction of the controller (so it has to be done using `dispose()`)
 class MapWidget extends ConsumerStatefulWidget {
   const MapWidget({super.key, required this.spot});
   final ClimbingSpotModel spot;
@@ -71,7 +74,7 @@ class _MapWidgetState extends ConsumerState<MapWidget> {
         TileLayer(
           errorImage: const AssetImage(Assets.icon),
           urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-          userAgentPackageName: 'com.shinywall.shinywall',
+          userAgentPackageName: 'com.gerardggf.climbaround',
         ),
         MarkerLayer(
           rotate: true,

@@ -1,3 +1,4 @@
+/// Generic failure
 class Failure {
   final String message;
 
@@ -7,6 +8,7 @@ class Failure {
   String toString() => message;
 }
 
+/// Failures for Firebase requests
 class FirebaseFailure extends Failure {
   final String code;
 

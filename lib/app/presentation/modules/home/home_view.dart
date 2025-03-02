@@ -11,22 +11,18 @@ import '../../../domain/repositories/climbing_spots_repository.dart';
 import '../spot_detail/spot_detail_view.dart';
 import 'widgets/climbing_spot_card_widget.dart';
 
+/// Fetches the climbing spots from the local JSON file
 final fetchClimbingSpotsProvider = FutureProvider(
   (ref) async => ref.watch(climbingSpotsRepoProvider).fetchClimbingSpots(),
 );
 
-class HomeView extends ConsumerStatefulWidget {
+class HomeView extends ConsumerWidget {
   const HomeView({super.key});
 
   static const String routeName = '/home';
 
   @override
-  ConsumerState<HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends ConsumerState<HomeView> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final fetchClimbingSpotsFuture = ref.watch(fetchClimbingSpotsProvider);
     return Scaffold(
       drawer: const OptionsDrawer(),

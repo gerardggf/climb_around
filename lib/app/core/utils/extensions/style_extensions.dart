@@ -16,4 +16,6 @@ extension ThemeContextStyleExtension on BuildContext {
   TextStyle? get themeTL => Theme.of(this).textTheme.titleLarge;
   TextStyle? get themeTM => Theme.of(this).textTheme.titleMedium;
   TextStyle? get themeTS => Theme.of(this).textTheme.titleSmall;
+
+  //...
 }

@@ -119,6 +119,7 @@ class SignInView extends HookConsumerWidget {
                       ),
                       10.h,
                       TextFormField(
+                        key: const Key('email-tf'),
                         controller: emailController,
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: (value) =>
@@ -130,6 +131,7 @@ class SignInView extends HookConsumerWidget {
                       ),
                       20.h,
                       TextFormField(
+                        key: const Key('pswd-tf'),
                         controller: passwordController,
                         validator: (value) =>
                             FormValidators.validatePassword(value),
@@ -158,6 +160,7 @@ class SignInView extends HookConsumerWidget {
                         ),
                       ),
                       ElevatedButton(
+                        key: const Key('sign-in-btn'),
                         onPressed: () async {
                           if (!_formKey.currentState!.validate()) return;
                           await notifier.signIn(

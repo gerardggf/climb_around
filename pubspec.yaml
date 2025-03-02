@@ -1,5 +1,5 @@
 name: climb_around
-description: "A new Flutter project."
+description: "Climb around app"
 
 publish_to: "none"
 
@@ -41,6 +41,7 @@ dev_dependencies:
   freezed: ^2.5.7
   flutter_launcher_icons: ^0.14.3
 
+# Run "flutter pub run flutter_launcher_icons"
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
